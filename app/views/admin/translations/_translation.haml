@@ -1,0 +1,13 @@
+%tr.node.level_1   
+  %td.snippet
+    = link_to "##{trs.id}(#{trs.job_id})", '#'
+  %td
+    = link_to trs.body_src[0..50], '#', :title => trs.body_src
+  %td
+    = link_to trs.body_tgt[0..50], '#', :title => trs.body_tgt
+  %td
+    = trs.lc_src
+    &raquo;
+    = trs.lc_tgt
+  %td
+    = trs.status  

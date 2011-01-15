@@ -1,0 +1,21 @@
+---
+en:
+  mygengo: Mygengo
+  new_job: New Job
+  top_up: Top Up
+  actions: Actions
+  job_summary: Job/Summary
+  status_tier: Status/Tier
+  job: Job
+  summary: Summary
+  status: Status
+  tier: Tier
+  comments: Comments
+  languages: Languages
+  pricing: Pricing
+  eta: ETA
+  id: ID
+  id_job_id: ID(JobID)
+  before: Before
+  after: After
+  local_translation: Local Translation

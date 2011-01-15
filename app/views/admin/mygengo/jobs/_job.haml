@@ -1,0 +1,40 @@
+%tr.node.level_1   
+  %td.snippet
+    = link_to "##{job['job_id']}", admin_mygengo_job_path(job["job_id"])
+  %td
+    = job['slug']
+  %td
+    = job['status']
+  %td
+    = job['tier']
+  %td
+    = job['comments'].size
+    comments
+  %td
+    = job['lc_src']
+    &raquo;
+    =job['lc_tgt']
+  %td
+    = job['credits']
+    credits
+    %br
+    = job['unit_count']
+    words
+  %td
+    = eta(job['eta'])
+  %td.remove
+    = link_to t('remove'), admin_mygengo_job_path(job['job_id']), :method => :delete, :confirm => 'Are you sure?'
+  %td
+    = link_to 'View', admin_mygengo_job_path(job["job_id"])    
+    - if job['status'] == 'reviewable'
+      = link_to 'Review', review_form_admin_mygengo_job_path(job["job_id"])    
+  %td
+    - if job['status'] == 'approved' 
+      - if !@translation_ids.include?(job['job_id'])
+        - form_for :translation, :url => admin_translations_path do |f|
+          = hidden_field_tag 'translation[job_id]', job['job_id']
+          = f.submit 'Create'
+      - else
+        Yes
+    - else
+      N/A

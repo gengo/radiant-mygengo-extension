@@ -1,0 +1,59 @@
+- @page_title = "myGengo New translation order"
+- body_classes << 'reversed'
+
+%h1 New translation order
+- form_for :job, :url => {:action => 'create'}, :html => {:class => 'mygengo-form'}  do |f|
+  .field
+    %label Slug
+    %br
+    = f.text_field :slug
+  %div(style="float: left;margin-right: 15px;")
+    .field
+      %label Text
+      %br
+      = f.text_area :body_src,  :size => '60x10'
+  %div
+    .field(style="float: left;margin-right: 15px;")
+      %label Translate from
+      %br
+      = f.select :lc_src, @language_src, :selected => 'en'
+    .field
+      %label Translate to
+      %br
+      = f.select :lc_tgt, @language_tgt
+    .field
+      %label Tier
+      %br
+      = f.radio_button :tier, :machine
+      Machine
+      = f.radio_button:tier, :standart
+      Standart
+      = f.radio_button :tier, :pro
+      Pro
+      = f.radio_button :tier, :ultra
+      Ultra                             
+    #comment_area(style="display: none")
+      %label Comment
+      %br
+      = f.text_area :comment, :size => '40x7'
+    #comment_button.field
+      = button_to_function 'Add comment' do |page|
+        - page['comment_area'].show
+        - page['comment_button'].hide        
+    .field
+      = f.check_box :as_group
+      As group
+    .field
+      = f.check_box :auto_approve    
+      Auto approve and publish jobs
+    .field
+      %label Callback URL
+      %br
+      = f.text_field :callback_url    
+    / .field
+    /   %h4 Total (250 words)
+    /   $10.50  
+    .clear    
+    %p.buttons
+      = f.submit "Order", :class => 'button'
+

@@ -1,0 +1,24 @@
+- @page_title = "myGengo Jobs"
+
+.outset
+  %table#jobs.index{:summary=>"Translations jobs listing"}
+    %thead
+      %tr
+        %th.status= t('job') 
+        %th.page= t('summary') 
+        %th.status= t('status')
+        %th.status= t('tier')
+        %th.status= t('comments')
+        %th.status= t('languages')
+        %th.status= t('pricing')
+        %th.status= t('eta')
+        %th.modify= t('remove')
+        %th.status= t('actions')  
+        %th.status= t('local_translation')
+    %tbody
+      - for job in @jobs
+        = render :partial => 'admin/mygengo/jobs/job', :locals => {:job => job}
+   
+#actions
+  %ul
+    %li= link_to image('plus') + " " + t("new_job"), new_admin_mygengo_job_path

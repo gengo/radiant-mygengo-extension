@@ -1,0 +1,9 @@
+- @page_title = "myGengo Account"
+- body_classes << 'reversed edit_personal_preferences'
+
+%h1 Account info
+= render :partial => 'admin/mygengo/account/balance'
+= render :partial => 'admin/mygengo/account/stats'
+ 
+%p.buttons
+  = link_to t("top_up"), 'http://mygengo.com/account/top_up', :class => 'button'
