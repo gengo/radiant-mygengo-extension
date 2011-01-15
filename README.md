@@ -7,6 +7,7 @@
   Create new radiant project
   
     $ radiant some_site
+    $ rake db:bootstrap
     $ gem install mugen
     
   In some_site directory do
