@@ -13,6 +13,8 @@
   In some_site directory do
     
     $ ./script/extension install mygengo
+    $ rake radiant:extensions:mygengo:migrate
+    $ rake radiant:extensions:mygengo:update
     
   Paste API keys in ./vendor/extensions/mygengo/mygengo_extension.rb
   
