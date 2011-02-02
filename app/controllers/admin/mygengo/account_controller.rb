@@ -1,11 +1,12 @@
-class Admin::Mygengo::AccountController < ApplicationController
-  # layout 'mygengo'
-  helper :mugen
+class Admin::Mygengo::AccountController < MygengoController
   before_filter :assets_global
   
   def index    
-    @account = Mugen::Account.balance || {}
-    @stats = Mugen::Account.stats
+    mygengo_requests do 
+      @account = Mugen::Account.balance || {}
+      @stats = Mugen::Account.stats
+    end             
+   
     @account.merge! @stats if @stats
   end
   
