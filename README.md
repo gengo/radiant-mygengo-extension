@@ -1,6 +1,7 @@
 # Radiant myGengo Extension
 
   This extension provides integration between RadiantCMS and myGengo.com through API
+  [Extension page](<http://ext.radiantcms.org/extensions/260-mygengo>)
 
 ## Installation
 
