@@ -9,8 +9,9 @@ class MygengoExtension < Radiant::Extension
   extension_config do |config|
     config.gem 'mugen'
     config.after_initialize do
-      Mugen.api_key = '6NO~NtyavKh@x-Uz@)0LG_PQ1KJI[(kd_2{oqv}H{ubO5Yu3is~IF^udRwM6QC6n'
-      Mugen.private_key = 'w0F((zYj3=09(AD|2B7)jNT@5F[wajwk[6u^stF59wCfuCtwMEMB^c7y=5V~WM^K'      
+      Mugen.api_url = 'http://api.mygengo.com/v1/'
+      Mugen.api_key = ''
+      Mugen.private_key = ''
     end
   end
 

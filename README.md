@@ -22,6 +22,7 @@
     extension_config do |config|
       config.gem 'mugen'
       config.after_initialize do
+        Mugen.api_url = 'http://api.mygengo.com/v1/'
         Mugen.api_key = ''
         Mugen.private_key = ''      
       end

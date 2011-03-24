@@ -6,7 +6,7 @@ class Admin::Mygengo::JobsController < MygengoController
   # GET /jobs.xml
   def index
     mygengo_requests do 
-      @job_ids = Mugen::Jobs.all
+      @job_ids = Mugen::Jobs.all || []
       @jobs = @job_ids.collect {|j| 
         Mugen::Job.find(j['job_id']).merge('comments' => Mugen::Job.comments(j['job_id']))
       }
